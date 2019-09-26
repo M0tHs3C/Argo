@@ -11,3 +11,38 @@ $ cd Argo
 $ pip3 install -r requirements.txt
 $ python3 argo.py
 ```
+## Introduction
+Argo is a multi camera gathering and exploiting tool.
+Argo will automatically search on the internet using censys or shodan key.
+There are loaded some specific querys for vulnerable device usable on shodan or censys.
+In order to make it work you will need to provide the key for shodan and censys, you can either enter them when you will be asked or you can modify manually the API files.
+You will find them in the API folder; the api.txt file is for shodan, just paste the key in the first line and stop.
+The censys_api.txt will be in the same folder, just paste the two key in two separate lines, one on top of the other one
+## Usage
+Argo is pretty basic, i've reduced the user interactions to the minimum necessary
+It's pretty straightforward
+The tool have 4 phases (non-mandatory)
+* 1) Host gathering
+    you will have to gather some host either from shodan or censys
+* 2) Up testing
+    test if all the host are really up
+* 3) vuln testing
+    some device will have to be tested for vulnerability, the query is right but there might be false positive
+* 4) exploit
+   in the fifth section you will find the exploit menu, a list of different exploit for different camera model
+   logically the exploit for the "A" camera will not work if you gather host of "B" camera
+## Cameras
+Today the tool supports only
+```bash
+Hikvision camera
+Viola dvr camera
+AVTECH camera
+```
+coming soon will be aveilable device like "rsp type" or other that i will add
+## Compability
+The tool is tested to work on windows and linux
+
+
+
+legal disclaimer: Usage of hikxploit for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
