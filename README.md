@@ -22,13 +22,13 @@ The censys_api.txt will be in the same folder, just paste the two key in two sep
 Argo is pretty basic, i've reduced the user interactions to the minimum necessary
 It's pretty straightforward
 The tool have 4 phases (non-mandatory)
-* 1 ) Host gathering
+* 1 ) Host gathering<br/>
     you will have to gather some host either from shodan or censys
-* 2 ) Up testing
+* 2 ) Up testing<br/>
     test if all the host are really up
-* 3 ) vuln testing
+* 3 ) vuln testing<br/>
     some device will have to be tested for vulnerability, the query is right but there might be false positive
-* 4 ) exploit
+* 4 ) exploit<br/>
    in the fifth section you will find the exploit menu, a list of different exploit for different camera model
    logically the exploit for the "A" camera will not work if you gather host of "B" camera
 ## Cameras
