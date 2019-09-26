@@ -31,6 +31,7 @@ The tool have 4 phases (non-mandatory)
 * 4 ) exploit<br/>
    in the fifth section you will find the exploit menu, a list of different exploit for different camera model
    logically the exploit for the "A" camera will not work if you gather host of "B" camera
+   if is aveilable in the exploit section u will find a bruteforce tool for that camera too
 ## Cameras
 Today the tool supports only
 ```bash
