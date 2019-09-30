@@ -38,6 +38,7 @@ Today the tool supports only
 Hikvision camera
 Viola dvr camera
 AVTECH camera
+Bticino server
 ```
 coming soon will be available device like "rsp type" or other that i will add
 ## Compability
