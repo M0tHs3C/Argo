@@ -39,7 +39,7 @@ Hikvision camera
 Viola dvr camera
 AVTECH camera
 ```
-coming soon will be aveilable device like "rsp type" or other that i will add
+coming soon will be available device like "rsp type" or other that i will add
 ## Compability
 The tool is tested to work on windows and linux
 
