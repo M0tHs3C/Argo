@@ -39,8 +39,8 @@ Hikvision camera
 Viola dvr camera
 AVTECH camera
 Bticino server
+RSP device
 ```
-coming soon will be available device like "rsp type" or other that i will add
 ## Compability
 The tool is tested to work on windows and linux
 
