@@ -37,3 +37,5 @@ class upTester:
                 a += 1
         except KeyboardInterrupt:
             print ("\n[---]exiting now[---]")
+        except AttributeError:
+            pass
