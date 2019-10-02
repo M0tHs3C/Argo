@@ -4,6 +4,7 @@ from lib.shodanSearch import *
 from modules.upTester import *
 from exploit.exploitMenu import *
 from modules.testerMenu import *
+from modules.fileDelete import *
 
 class Argo:
     def main(self):
@@ -18,6 +19,9 @@ class Argo:
                 testerMenu.testerMenu(self)
             elif selectionArg == 5:
                 exploitMenu.exploitMenu(self)
+            elif selectionArg == 6:
+                fileDelete.deleteFileContent(self)
+
 
 
 
@@ -39,6 +43,8 @@ class Argo:
                    |  (4) Test for false positive     [Not all results may be vuln]  |
                    |                                                                 |
                    |  (5) Exploit menu                [Exploit from multiple cctv ]  |
+                   |                                                                 |
+                   |  (6) Delete host list            [Clear the history of hosts ]  |
                    |                                                                 |
                    +-----------------------------------------------------------------+
 
