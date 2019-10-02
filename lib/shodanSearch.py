@@ -25,7 +25,9 @@ class shodanSearch:
 |                                               |
 | (4) AVTECH query          [ AVTECH          ] |
 |                                               |
-| (5) custom query                              |
+| (5) Geovision query       [Server:thttpd PHP] |
+|                                               |
+| (6) custom query                              |
 |                                               |
 +-----------------------------------------------+
 """)
@@ -39,6 +41,8 @@ class shodanSearch:
                 elif selection == 4:
                     query = 'AVTECH'
                 elif selection == 5:
+                    query = 'Server: thttpd PHP'
+                elif selection == 6:
                     query = str(input('[-]Enter your custom query: '))
 
                 response = api.search(query)

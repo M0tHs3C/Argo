@@ -27,7 +27,9 @@ class censysSearch:
 |                                               |
 | (3) Viola DVR query       [ work in progress] |
 |                                               |
-| (4) custom query                              |
+| (4) bticino query         [My-Home bticino]   |
+|                                               |
+| (5) custom query                              |
 |                                               |
 +-----------------------------------------------+
 '''
@@ -42,6 +44,8 @@ class censysSearch:
                     pass
                     #query = '/wap.htm'
                 elif selection == 4:
+                    query = 'My-Home bticino'
+                elif selection == 5:
                     query = input('[-]Enter your custom query: ')
                 for record in censys.ipv4.CensysIPv4(api_id=uid, api_secret=secret).search(query):
                     ip = record['ip']
