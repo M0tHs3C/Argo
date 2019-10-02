@@ -40,11 +40,12 @@ Viola dvr camera
 AVTECH camera
 Bticino server
 RSP device
+Geovision camera
 ```
 ## Compability
 The tool is tested to work on windows and linux
 
 
 
-_legal disclaimer: Usage of hikxploit for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+_legal disclaimer: Usage of Argo for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
 
