@@ -14,7 +14,7 @@ $ python3 argo.py
 ## Introduction
 Argo is a multi camera gathering and exploiting tool.
 Argo will automatically search on the internet using censys or shodan key.
-There are loaded some specific querys for vulnerable device usable on shodan or censys.
+There are loaded some specific queries for vulnerable device usable on shodan or censys.
 In order to make it work you will need to provide the key for shodan and censys, you can either enter them when you will be asked or you can modify manually the API files.
 You will find them in the API folder; the api.txt file is for shodan, just paste the key in the first line and stop.
 The censys_api.txt will be in the same folder, just paste the two key in two separate lines, one on top of the other one
