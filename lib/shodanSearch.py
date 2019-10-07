@@ -7,7 +7,7 @@ class shodanSearch:
         if api_shodan_key == "":
             print('no shodan api found, please insert a valid one')
             api_shodan_key_to_file = input('\ntype here:')
-            with open(path + "/Api/api.txt", "wb") as api:
+            with open(path + "/Api/api.txt", "w") as api:
                 api.write(api_shodan_key_to_file)
             api = shodan.Shodan(api_shodan_key)
         else:

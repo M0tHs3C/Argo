@@ -11,7 +11,7 @@ class censysSearch:
             print('no censys api found, please insert a valid one')
             api_censys_uid = input('[****]' + 'type here uid:')
             api_censys_scrt = input('[****]' + 'type here secret:')
-            with open(path + "/Api/censys_api.txt", "wb") as api:
+            with open(path + "/Api/censys_api.txt", "w") as api:
                 api.write(api_censys_uid + "\n" + api_censys_scrt)
         else:
             uid = censys_list[0]
