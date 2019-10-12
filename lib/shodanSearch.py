@@ -27,7 +27,9 @@ class shodanSearch:
 |                                               |
 | (5) Geovision query       [Server:thttpd PHP] |
 |                                               |
-| (6) custom query                              |
+| (6) goAhead query         [GoAhead          ] |
+|                                               |
+| (7) custom query                              |
 |                                               |
 +-----------------------------------------------+
 """)
@@ -39,10 +41,12 @@ class shodanSearch:
                 elif selection == 3:
                     query = '/wap.htm'
                 elif selection == 4:
-                    query = 'AVTECH'
+                    query = 'linux upnp avtech'
                 elif selection == 5:
                     query = 'Server: thttpd PHP'
                 elif selection == 6:
+                    query = 'GoAhead 5ccc069c403ebaf9f0171e9517f40e41'
+                elif selection == 7:
                     query = str(input('[-]Enter your custom query: '))
 
                 response = api.search(query)

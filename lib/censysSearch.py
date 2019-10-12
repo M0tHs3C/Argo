@@ -29,6 +29,10 @@ class censysSearch:
 |                                               |
 | (4) bticino query         [My-Home bticino]   |
 |                                               |
+| (5) GeoVision query       [Beta]              |
+|                                               |
+| (6) GoAhead               [GoAhead         ]  |
+|                                               |
 | (5) custom query                              |
 |                                               |
 +-----------------------------------------------+
@@ -46,6 +50,10 @@ class censysSearch:
                 elif selection == 4:
                     query = 'My-Home bticino'
                 elif selection == 5:
+                    query = 'linux upnp avtech'
+                elif selection == 6:
+                    query = 'GoAhead 5ccc069c403ebaf9f0171e9517f40e41'
+                elif selection == 7:
                     query = input('[-]Enter your custom query: ')
                 for record in censys.ipv4.CensysIPv4(api_id=uid, api_secret=secret).search(query):
                     ip = record['ip']
