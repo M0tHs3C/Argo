@@ -41,6 +41,8 @@ AVTECH camera
 Bticino server
 RSP device
 Geovision camera
+goAhead camera
+atlantis camera
 ```
 ## Compability
 The tool is tested to work on windows and linux
