@@ -1,4 +1,5 @@
 import shodan,os,sys
+import shodan.exception
 
 class shodanSearch:
     def shodanGath(self):
@@ -29,7 +30,9 @@ class shodanSearch:
 |                                               |
 | (6) goAhead query         [GoAhead          ] |
 |                                               |
-| (7) custom query                              |
+| (7) mixed webcam w/o password                 |
+|                                               |
+| (8) custom query                              |
 |                                               |
 +-----------------------------------------------+
 """)
@@ -47,12 +50,37 @@ class shodanSearch:
                 elif selection == 6:
                     query = 'GoAhead 5ccc069c403ebaf9f0171e9517f40e41'
                 elif selection == 7:
+                    print("[--] by using shodan web interace search for this query, or upgrade your API plan\n"
+                          "[1]  has_screenshot:yes webcam\n"
+                          "[2]  has_screenshot:yes port:80\n"
+                          "[3]  has_screenshot:yes product:""Yawcam webcam viewer httpd\n"
+                          "[4]  has_screenshot:yes product:D-Link/Airlink IP webcam http config""\n")
+                    #query="has_screenshot:yes product:""D-Link/Airlink IP webcam http config"    #UN-COMMENT IF YOU HAVE PREMIUM PLAN1
+                    return
+                elif selection == 8:
                     query = str(input('[-]Enter your custom query: '))
 
-                response = api.search(query)
-                with open(path + '/Host/host.txt', "w") as host:
-                    for service in response['matches']:
-                        host.write(str(service['ip_str'] + ":" + str(service['port'])))# host.write(service['port']
-                        host.write("\n")
+                try:
+                    response = api.search(query)
+                    with open(path + '/Host/host.txt', "w") as host:
+                        for service in response['matches']:
+                            host.write(str(service['ip_str'] + ":" + str(service['port'])))# host.write(service['port']
+                            host.write("\n")
+                except shodan.exception.APIError:
+                    print("[!] Bad API, try deleting the api.txt file under the api folder and then recreate the file without modifing it, then re-run the tool\n[!] be advise, the file must be empty and when you must paste the api key without space")
+                    answer = input("[?] would you like to try to reset the api key system?  (y/n)  :")
+                    if str(answer.lower()) == "y":
+                        import platform
+                        system = platform.system()
+                        if system.lower() == "windows":
+                            os.system("del " + path + "/Api/api.txt")
+                            os.system("type nul > "+ path + "/Api/api.txt")
+                        elif system.lower() == "linux":
+                            os.system("rm " + path + "/Api/api.txt")
+                            os.system("touch " + path + "/Api/api.txt")
+                    else:
+                        pass
+
+
             except KeyboardInterrupt:
                 print ("\n[---]exiting now[---]")
