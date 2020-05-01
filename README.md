@@ -43,6 +43,7 @@ RSP device
 Geovision camera
 goAhead camera
 atlantis camera
+ANPR camera
 ```
 ## Compability
 The tool is tested to work on windows and linux
