@@ -18,6 +18,10 @@ class upTester:
                 port_raw = match2.group()
                 port = port_raw[1:]
                 try:
+                    percentage = (a / len(host)) * 100
+                    progressBar = int(percentage)/5
+                    sys.stdout.write("\r"+ "[%-20s] %.2f%%" % ('█' * int(progressBar),  percentage))
+                    sys.stdout.flush()
                     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                     client.settimeout(5)
                     client.connect((target_host, int(port)))
@@ -39,3 +43,5 @@ class upTester:
             print ("\n[---]exiting now[---]")
         except AttributeError:
             pass
+        finally:
+            sys.stdout.write("\r" + "[%-20s] %.2f%%" % ('█' * 20, 100.00))

