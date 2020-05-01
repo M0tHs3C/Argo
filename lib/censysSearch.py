@@ -53,8 +53,13 @@ class censysSearch:
                     query = 'linux upnp avtech'
                 elif selection == 6:
                     query = 'GoAhead 5ccc069c403ebaf9f0171e9517f40e41'
-                elif selection == 7:
+                elif selection == 7 or selection == 3:
+                    query = '80.http.get.headers.server:Boa 0.94.14rc21'
+                elif selection == 8:
+                    query = 'WWW-Authenticate: Basic realm="Embedded-Device"'
+                elif selection == 9:
                     query = input('[-]Enter your custom query: ')
+                print(query)
                 for record in censys.ipv4.CensysIPv4(api_id=uid, api_secret=secret).search(query):
                     ip = record['ip']
                     port = record['protocols']

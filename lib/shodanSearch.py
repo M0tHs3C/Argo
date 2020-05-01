@@ -32,7 +32,9 @@ class shodanSearch:
 |                                               |
 | (7) mixed webcam w/o password                 |
 |                                               |
-| (8) custom query                              |
+| (8) ANPR cam query        [embedded-server]   |
+|                                               |
+| (9) custom query                              |
 |                                               |
 +-----------------------------------------------+
 """)
@@ -58,6 +60,8 @@ class shodanSearch:
                     #query="has_screenshot:yes product:""D-Link/Airlink IP webcam http config"    #UN-COMMENT IF YOU HAVE PREMIUM PLAN1
                     return
                 elif selection == 8:
+                    query= 'WWW-Authenticate: Basic realm="Embedded-Device"'
+                elif selection == 9:
                     query = str(input('[-]Enter your custom query: '))
 
                 try:
