@@ -1,12 +1,16 @@
 import censys
 import censys.ipv4
 from censys.base import CensysException
-import sys,os,re
+import sys
+import os
+import re
+
 
 class censysSearch:
     def censysGath(self):
         path = os.path.abspath(os.path.dirname(sys.argv[0]))
-        censys_list = open(path + "/Api/censys_api.txt", "r").read().splitlines()
+        censys_list = open(path + "/Api/censys_api.txt",
+                           "r").read().splitlines()
         if censys_list == []:
             print('no censys api found, please insert a valid one')
             api_censys_uid = input('[****]' + 'type here uid:')
@@ -14,8 +18,8 @@ class censysSearch:
             with open(path + "/Api/censys_api.txt", "w") as api:
                 api.write(api_censys_uid + "\n" + api_censys_scrt)
         else:
-            uid = censys_list[0]
-            secret = censys_list[1]
+            uid = censys_list[0].rstrip()
+            secret = censys_list[1].rstrip()
             try:
                 usage = '''+-----------------------------------------------+
 |                 Censys search                 |
