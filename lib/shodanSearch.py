@@ -85,7 +85,7 @@ class shodanSearch:
                         if system.lower() == "windows":
                             os.system("del " + path + "/Api/api.txt")
                             os.system("type nul > " + path + "/Api/api.txt")
-                        elif system.lower() == "linux":
+                        elif system.lower() == "linux" or system.lower() == "darwin":
                             os.system("rm " + path + "/Api/api.txt")
                             os.system("touch " + path + "/Api/api.txt")
                     else:
