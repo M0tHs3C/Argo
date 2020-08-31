@@ -37,7 +37,11 @@ class censysSearch:
 |                                               |
 | (6) GoAhead               [GoAhead         ]  |
 |                                               |
-| (5) custom query                              |
+| (7) Boa server query                          |
+|                                               |
+| (8) ANPR camera query                         |
+|                                               |
+| (9) custom query                              |
 |                                               |
 +-----------------------------------------------+
 '''
