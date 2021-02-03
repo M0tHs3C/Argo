@@ -5,7 +5,7 @@ from modules.upTester import *
 from exploit.exploitMenu import *
 from modules.testerMenu import *
 from modules.fileDelete import *
-
+from lib.menuBuilder import *
 class Argo:
     def main(self):
         def selection(self, selectionArg):
@@ -23,38 +23,27 @@ class Argo:
                 fileDelete.deleteFileContent(self)
 
 
-
-
-        usage = """\n                     ,-""-.     _                          ,-""-.  ,-""-.
-                    / ,--. \   /_\  _ __ __ _  ___        / ,--. \/ ,--.'\ 
-                   | ( () ) | //_\\\| '__/ _` |/ _ \      | ( () )||( () ) |
-                    \,`--'./ /  _  \ | | (_| | (_) |  ,-""\.`--'-/\-`--',/""-.
-                    /`-..-'\ \_/ \_/_|  \__, |\___/  / ,--.`-..-'--`-..-',--.'\ 
-                   | ( () ) |           |___/       | ( () ) | ( () ) | ( () ) |
-                    \ `--' /                         \ `--' / \ `--' / \ `--' /
-                   +-`-..-'---------------------------`-..-'---`-..-'---`-..-'-------+
-                   |                                                                 |
-                   |  (1) Gather host from shodan     [API key from shodan needed ]  |
-                   |                                                                 |
-                   |  (2) Gather host from censys     [API key and secret needed  ]  |
-                   |                                                                 |
-                   |  (3) Test for really up host     [Not always the host are up ]  |
-                   |                                                                 |
-                   |  (4) Test for false positive     [Not all results may be vuln]  |
-                   |                                                                 |
-                   |  (5) Exploit menu                [Exploit from multiple cctv ]  |
-                   |                                                                 |
-                   |  (6) Delete host list            [Clear the history of hosts ]  |
-                   |                                                                 |
-                   +-----------------------------------------------------------------+
-
-"""
-        print(usage)
+        banner = """\n    __ _ _ __ __ _  ___\n   / _` | '__/ _` |/ _ \ \n  | (_| | | | (_| | (_) |\n   \__,_|_|  \__, |\___/     V 2.0 by M0thS3c\n             |___/       """
+        argoMenu = [["Gather host from shodan", "API key needed"],
+                    ["Gather host from censys", "API key needed"],
+                    ["Test for up host", "host may be down even if the search is fresh"],
+                    ["Test for false positive", "not all host may be vuln"],
+                    ["Exploit menu", "List of available exploit"],
+                    ["Delete Hosts lists", "Clear history of hosts"]]
+        print(banner)
+        menuBuilder.buildMenu(selectionArray=argoMenu,title="Argo main menu")
         selectionInput = input("[-]Choose an option: ")
-        selection(self,int(selectionInput))
+        try:
+            selection(self, int(selectionInput))
+        except ValueError:
+            print("[!!!] You  entered a wrong input")
+
 
 
 
 argo = Argo()
-while 1:
-    argo.main()
+try:
+    while 1:
+        argo.main()
+except KeyboardInterrupt:
+    print("\n[ Bye ] Exiting now...")
