@@ -44,6 +44,7 @@ Geovision camera
 goAhead camera
 atlantis camera
 ANPR camera
+SAMIP selta web app
 ```
 ## Compability
 The tool is tested to work on windows and linux
