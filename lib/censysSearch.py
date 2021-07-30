@@ -86,10 +86,7 @@ class censysSearch:
         else:
             uid = censys_list[0]
             secret = censys_list[1]
-        query = ['80.http.get.title:"SAMIP Web Access"',
-                 '443.http.get.title:"SAMIP Web Access"',
-                 '8080.http.get.title:"SAMIP Web Access"',
-                 '8888.http.get.title:"SAMIP Web Access"']
+        query = ['services.http.response.html_title:"SAMIP Web Access"']
         try:
             for q in query:
                 for record in CensysIPv4(api_id=uid, api_secret=secret).search(q):
