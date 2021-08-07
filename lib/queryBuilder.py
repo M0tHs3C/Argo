@@ -1,31 +1,31 @@
 from lib import censysSearch
 class QueryBuilder:
     def countryAdder(query):
-            countryAdd = input('[-] Would you like to add a country to the query (y/n)')
-            if str(countryAdd).lower() == 'y':
-                try:
-                    countryCode = input('[?] Enter a country code (eg. DE IT JP):')
-                    queryModded = query + " and location.country_code:" + countryCode
-                    return queryModded
-                except TypeError:
-                    print('[-!-] Wrong type, retrying...')
-            elif str(countryAdd).lower() == 'n':
-                return query
+        countryAdd = input('[-] Would you like to add a country to the query (y/n)')
+        if str(countryAdd).lower() == 'y':
+            try:
+                countryCode = input('[?] Enter a country code (eg. DE IT JP):')
+                queryModded = query + " and location.country_code:" + countryCode
+                return queryModded
+            except TypeError:
+                print('[-!-] Wrong type, retrying...')
+        elif str(countryAdd).lower() == 'n':
+            return query
     def cityAdder(query):
-            countryAdd = input('[-] Would you like to add a city to the query (y/n)')
-            if str(countryAdd).lower() == 'y':
-                try:
-                    countryCode = input('[?] Enter a city name:')
-                    queryModded = query + " and location.city:" + countryCode
-                    return queryModded
-                except TypeError:
-                    print('[-!-] Wrong type, retrying...')
-            elif str(countryAdd).lower() == 'n':
-                return query
+        countryAdd = input('[-] Would you like to add a city to the query (y/n)')
+        if str(countryAdd).lower() == 'y':
+            try:
+                countryCode = input('[?] Enter a city name:')
+                queryModded = query + " and location.city:" + countryCode
+                return queryModded
+            except TypeError:
+                print('[-!-] Wrong type, retrying...')
+        elif str(countryAdd).lower() == 'n':
+            return query
     def CamQueryBuilderCensys(self):
         selection = int(input('[-]Choose an option: '))
         if selection == 1:
-            query = 'App-webs 200 OK'
+            query = 'services.software.vendor:"Hikvision"'
         elif selection == 2:
             pass
             # query = 'login.rsp'

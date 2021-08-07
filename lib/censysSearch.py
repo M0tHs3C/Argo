@@ -1,5 +1,5 @@
-import censys
-from censys.search import CensysIPv4
+
+from censys.search import SearchClient
 from censys.common.exceptions import (CensysException,
                                       CensysRateLimitExceededException)
 import sys
@@ -27,7 +27,7 @@ class censysSearch:
                 try:
                     menuSelection = [['Cameras', 'List of cameras query and affiliated'],
                                      ['VPNs', 'List of affected vpns']]
-                    cameraSelection = [['Hikvision', 'Apps-webs 200 OK'],
+                    cameraSelection = [['Hikvision', 'services.software.vendor:"Hikvision"'],
                                        ['RSP device', 'WIP'],
                                        ['Viola DVR', 'WIP'],
                                        ['Bticino', 'My-Home Bticino'],
@@ -55,14 +55,19 @@ class censysSearch:
                     if query != None:
                         print('[Selected query] %s' % query)
                     else:
-                        pass
-                    for record in CensysIPv4(api_id=uid, api_secret=secret).search(query):
-                        ip = record['ip']
-                        port = record['protocols']
-                        port_raw = port[0]
-                        port = re.findall(r'\d+', port_raw)
+                        print(2)
+                        #pass
+                    censysSearch = SearchClient()
+                    print(query)
+                    apiRequest = censysSearch.v2.hosts.search(query, per_page=100000)
+                    record = apiRequest.view_all()
+                    for host in record:
+                        ip = record[host]['ip']
+                        port = record[host]['services'][0]['port']
+                        #port_raw = port[0]
+                        #port = re.findall(r'\d+', port_raw)
                         with open(path + '/host/host.txt', "a") as cen:
-                            cen.write(ip + ":" + str(port[0]))
+                            cen.write(str(ip) + ":" + str(port))
                             cen.write("\n")
                 except KeyboardInterrupt:
                     print("[*]Exiting...")
@@ -72,6 +77,7 @@ class censysSearch:
                     print("[No query passed]")
             except:
                 pass
+
 
     def samipGathCensys(self):
         path = os.path.abspath(os.path.dirname(sys.argv[0]))
