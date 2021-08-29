@@ -22,7 +22,7 @@ class shodanSearch:
                              ['GeoVision', 'Beta-testing'],
                              ['GoAhead', 'GoAhead cctv'],
                              ['Mixed webcam w/o password',''],
-                             ['ANPR cam', 'embedded-server'],
+                             ['ANPR cam', 'http.html_hash:-472107530'],
                              ['Generic RTSP', 'port:554'],
                              ['Custom query', 'customize your search']]
                 menuBuilder.menuBuilder.buildMenu(selectionArray=selection,title="Shodan search")
