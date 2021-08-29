@@ -33,7 +33,7 @@ class QueryBuilder:
             pass
             # query = '/wap.htm'
         elif selection == 4:
-            query = 'My-Home bticino'
+            query = 'services.http.response.html_title:"My Home"'
         elif selection == 5:
             query = 'linux upnp avtech'
         elif selection == 6:
@@ -41,7 +41,7 @@ class QueryBuilder:
         elif selection == 7 or selection == 3:
             query = '80.http.get.headers.server:Boa 0.94.14rc21'
         elif selection == 8:
-            query = 'WWW-Authenticate: Basic realm="Embedded-Device"'
+            query = 'services.http.response.body_hash:"sha1:c185b57b3ce821a3f5ffffe0479954c10df1279a""'
         elif selection == 9:
             query = input('[-]Enter your custom query: ')
         query = QueryBuilder.countryAdder(query)

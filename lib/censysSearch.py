@@ -30,9 +30,11 @@ class censysSearch:
                     cameraSelection = [['Hikvision', 'services.software.vendor:"Hikvision"'],
                                        ['RSP device', 'WIP'],
                                        ['Viola DVR', 'WIP'],
-                                       ['Bticino', 'My-Home Bticino'],
+                                       ['Bticino', 'services.http.response.html_title:"My Home"'],
                                        ['GeoVision', 'Beta-testing'],
                                        ['GoAhead', 'GoAhead cctv'],
+                                       ['Boa Server', 'not working'],
+                                       ['Tattile ANPR camera', 'services.http.response.body_hash:"sha1:c185b57b3ce821a3f5ffffe0479954c10df1279a"'],
                                        ['Custom query', 'customize your search']]
                     vpnSelection = [['Fortinet FortiOS', 'vuln vpns'],
                                     ['SAMIP VoIP', 'Samip voip brute']]
