@@ -83,5 +83,7 @@ class QueryBuilder:
         elif selection == 9:
             query = 'port:554 has_screenshot:true'
         elif selection == 10:
+            query = 'http.favicon.hash:130960039'
+        elif selection == 11:
             query = str(input('[-]Enter your custom query: '))
         return query
