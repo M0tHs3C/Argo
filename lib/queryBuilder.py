@@ -5,7 +5,7 @@ class QueryBuilder:
         if str(countryAdd).lower() == 'y':
             try:
                 countryCode = input('[?] Enter a country code (eg. DE IT JP):')
-                queryModded = query + " and location.country_code:" + countryCode
+                queryModded = query + " and location.country_code='" + countryCode.upper() + "'"
                 return queryModded
             except TypeError:
                 print('[-!-] Wrong type, retrying...')
@@ -50,7 +50,7 @@ class QueryBuilder:
     def VpnsQueryBuilderCensys(self):
         selection = int(input('[-]Choose an option: '))
         if selection == 1:
-            query = '443.https.tls.certificate.parsed.subject.email_address:support@fortinet.com'
+            query = '(services.tls.certificates.leaf_data.issuer.email_address:"support@fortinet.com")'
         elif selection == 2:
             censysSearch.censysSearch.samipGathCensys(self)
         query = QueryBuilder.countryAdder(query)
