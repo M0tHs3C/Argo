@@ -57,15 +57,14 @@ class censysSearch:
                     if query != None:
                         print('[Selected query] %s' % query)
                     else:
-                        print(2)
-                        #pass
+                        pass
                     censysSearch = SearchClient()
-                    print(query)
-                    apiRequest = censysSearch.v2.hosts.search(query, per_page=100000)
+                    apiRequest = censysSearch.v2.hosts.search(query, per_page=100, pages=1)
                     record = apiRequest.view_all()
                     for host in record:
                         ip = record[host]['ip']
-                        port = record[host]['services'][0]['port']
+                        print(record)
+                        port = record[host]['services'][0]['port'] if record[host]['services'][0]['port'] else 80
                         #port_raw = port[0]
                         #port = re.findall(r'\d+', port_raw)
                         with open(path + '/host/host.txt', "a") as cen:
@@ -74,7 +73,7 @@ class censysSearch:
                 except KeyboardInterrupt:
                     print("[*]Exiting...")
                 except CensysException:
-                    pass
+                    print("[!]Something wrong with your censys key!")
                 except UnboundLocalError:
                     print("[No query passed]")
             except:

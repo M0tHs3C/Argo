@@ -50,7 +50,7 @@ class QueryBuilder:
     def VpnsQueryBuilderCensys(self):
         selection = int(input('[-]Choose an option: '))
         if selection == 1:
-            query = '(services.tls.certificates.leaf_data.issuer.email_address:"support@fortinet.com")'
+            query = '(services.tls.certificates.leaf_data.issuer.email_address:"support@fortinet.com") and services.port:10443'
         elif selection == 2:
             censysSearch.censysSearch.samipGathCensys(self)
         query = QueryBuilder.countryAdder(query)
