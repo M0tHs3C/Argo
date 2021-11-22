@@ -43,6 +43,8 @@ class QueryBuilder:
         elif selection == 8:
             query = 'services.http.response.body_hash:"sha1:c185b57b3ce821a3f5ffffe0479954c10df1279a""'
         elif selection == 9:
+            query = 'services.http.response.headers.Server:"JAWS/1.0"'
+        elif selection == 10:
             query = input('[-]Enter your custom query: ')
         query = QueryBuilder.countryAdder(query)
         query = QueryBuilder.cityAdder(query)
@@ -85,5 +87,7 @@ class QueryBuilder:
         elif selection == 10:
             query = 'http.favicon.hash:130960039'
         elif selection == 11:
+            query = 'JAWS/1.0'
+        elif selection == 12:
             query = str(input('[-]Enter your custom query: '))
         return query

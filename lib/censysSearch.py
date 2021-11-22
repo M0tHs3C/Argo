@@ -35,6 +35,7 @@ class censysSearch:
                                        ['GoAhead', 'GoAhead cctv'],
                                        ['Boa Server', 'not working'],
                                        ['Tattile ANPR camera', 'services.http.response.body_hash:"sha1:c185b57b3ce821a3f5ffffe0479954c10df1279a"'],
+                                       ['JAWS cctv camera', 'services.http.response.headers.Server:"JAWS/1.0"'],
                                        ['Custom query', 'customize your search']]
                     vpnSelection = [['Fortinet FortiOS', 'vuln vpns'],
                                     ['SAMIP VoIP', 'Samip voip brute']]
@@ -63,7 +64,6 @@ class censysSearch:
                     record = apiRequest.view_all()
                     for host in record:
                         ip = record[host]['ip']
-                        print(record)
                         port = record[host]['services'][0]['port'] if record[host]['services'][0]['port'] else 80
                         #port_raw = port[0]
                         #port = re.findall(r'\d+', port_raw)

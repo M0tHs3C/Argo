@@ -25,6 +25,7 @@ class shodanSearch:
                              ['ANPR cam', 'http.html_hash:-472107530'],
                              ['Generic RTSP', 'port:554'],
                              ['Energy sentinel web', 'http.favicon.hash:130960039'],
+                             ['JAWS server', 'JAWS/1.0'],
                              ['Custom query', 'customize your search']]
                 menuBuilder.menuBuilder.buildMenu(selectionArray=selection,title="Shodan search")
                 query = queryBuilder.QueryBuilder.CamQueryBuilderShodan(self)
