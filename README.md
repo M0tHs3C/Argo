@@ -45,6 +45,8 @@ goAhead camera
 atlantis camera
 ANPR camera
 SAMIP selta web app
+Energy sentinel web
+JAWS camera
 ```
 ## Compability
 The tool is tested to work on windows and linux
