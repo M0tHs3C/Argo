@@ -61,7 +61,7 @@ class QueryBuilder:
     def CamQueryBuilderShodan(self):
         selection = int(input('[-]Choose an option: '))
         if selection == 1:
-            query = 'App-webs 200 OK'
+            query = 'http.favicon.hash:999357577'
         elif selection == 2:
             query = 'login.rsp'
         elif selection == 3:

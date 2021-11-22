@@ -15,7 +15,7 @@ class shodanSearch:
         else:
             api = shodan.Shodan(api_shodan_key)
             try:
-                selection = [['Hikvision', 'Apps-webs 200 OK'],
+                selection = [['Hikvision', 'http.favicon.hash:999357577'],
                              ['RSP device', 'WIP'],
                              ['Viola DVR', 'WIP'],
                              ['Bticino', 'My-Home Bticino'],
