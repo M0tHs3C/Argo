@@ -1,17 +1,8 @@
 from modules.hikvisionTester import *
+from lib.menuBuilder import *
 class testerMenu:
     def testerMenu(self):
-        usage = """+-------------------------------------------+
-|                Menu tester                |
-+-------------------------------------------+
-|                                           |
-|  (1) Hikvision tester                     |
-|                                           |
-|  (2) coming soon                          |
-|                                           |
-+-------------------------------------------+
-"""
-        print(usage)
-        selection = int(input(("[-]Choose an option :")))
+        testerSelection = ['Hikvision tester', 'coming soon']
+        selection = menuBuilder.choose(selectionArray=testerSelection, title="Menu tester")
         if selection == 1:
             hikTester.hikTester(self)
