@@ -33,6 +33,7 @@ class shodanSearch:
                          ['JAWS server', 'JAWS/1.0'],
                          ['icare', 'http.favicon.hash:1786862297'],
                          ['teleindustria', 'http.favicon.hash:145805043'],
+                         ['SAMIP', 'http.title:"SAMIP Web Access"'],
                          ['Custom query', 'customize your search']]
             sel = menuBuilder.menuBuilder.choose(selectionArray=selection + [['Back', '']], title="Shodan search")
             if sel == len(selection) + 1:
