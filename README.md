@@ -63,7 +63,7 @@ Copy `.env.example` to `.env` and fill in your keys, or just let the tool prompt
 ### 1 · Host Gathering
 Search Shodan or Censys using built-in device-specific queries. Results are saved to `host/host.txt`.
 
-Supported queries include Hikvision, SAMIP, teleindustria, icare, JAWS, ANPR, FortiOS, and more — or enter a custom query.
+Supported queries include Hikvision, telephone, telephone2, icare, JAWS, ANPR, FortiOS, and more — or enter a custom query.
 
 ### 2 · Up Tester
 TCP-checks all gathered hosts and filters out unreachable ones. Writes live hosts to `host/up_host.txt`.
@@ -95,11 +95,11 @@ Three categories of exploits, each with its own submenu:
 | FortiOS | Known exploit |
 
 #### IoT
-| Device | Technique |
-|--------|-----------|
-| icare | Default credential bruteforce |
-| teleindustria | SQLi auth bypass · Mass RCE · Interactive shell |
-| SAMIP | Default credential bruteforce · Mass RCE · Interactive shell |
+| Device              | Technique |
+|---------------------|-----------|
+| icare               | Default credential bruteforce |
+| telephone           | SQLi auth bypass · Mass RCE · Interactive shell |
+| telephone2          | Default credential bruteforce · Mass RCE · Interactive shell |
 | Energy Sentinel Web | Default credentials |
 
 ### 5 · Host Control
@@ -114,7 +114,7 @@ Clears all generated `.txt` files in `host/` to start fresh.
 
 ## Interactive Shell
 
-For devices that support RCE (teleindustria, SAMIP), Argo drops into a persistent semi-interactive shell:
+For devices that support RCE (telephone, telephone2), Argo drops into a persistent semi-interactive shell:
 
 - Host selected via arrow-key menu from `vuln_host.txt`
 - `whoami` probe runs on entry to confirm the shell is alive
