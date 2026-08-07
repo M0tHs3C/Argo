@@ -1,4 +1,4 @@
-import sys
+import sys, shutil
 from colorama import init, Fore, Style
 
 init(autoreset=True)
@@ -102,13 +102,30 @@ class menuBuilder:
         return answer
 
     def shellBanner(target):
+        cols, rows = shutil.get_terminal_size((80, 24))
+        label = f" shell @ {target} "
+        width = max(len(label) + 2, min(cols - 2, 70))
+
+        # set terminal window title
         sys.stdout.write(f"\033]0;shell @ {target}\007")
+
+        # clear screen, draw header pinned to top
+        sys.stdout.write("\033[2J\033[H")
+        sys.stdout.write(Fore.CYAN + "┌" + "─" * width + "┐\n")
+        sys.stdout.write(Fore.CYAN + "│" + Style.BRIGHT + Fore.WHITE +
+                         label.center(width) + Style.RESET_ALL + Fore.CYAN + "│\n")
+        sys.stdout.write(Fore.CYAN + "└" + "─" * width + "┘" + Style.RESET_ALL + "\n")
+
+        # lock scroll region to everything below the 3-line header
+        sys.stdout.write(f"\033[4;{rows}r")
+        # move cursor to bottom of scroll region so output starts there
+        sys.stdout.write(f"\033[{rows};1H")
         sys.stdout.flush()
-        label = f"  shell @ {target}  "
-        width = max(len(label), 38)
-        print("\n" + menuBuilder.BORDER + "┌" + "─" * width + "┐")
-        print(menuBuilder.BORDER + "│" + Style.BRIGHT + Fore.WHITE + label.center(width) + Style.RESET_ALL + menuBuilder.BORDER + "│")
-        print(menuBuilder.BORDER + "└" + "─" * width + "┘" + Style.RESET_ALL + "\n")
+
+    def shellReset():
+        # restore full scroll region and clear screen so menus render cleanly
+        sys.stdout.write("\033[r\033[2J\033[H")
+        sys.stdout.flush()
 
     def choose(self=None, selectionArray=None, title=None, prompt="Choose an option"):
         try:
