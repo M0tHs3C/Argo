@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+guerrillaPhone.py
+.env
+host/*.txt
+api/*.txt
+.idea/

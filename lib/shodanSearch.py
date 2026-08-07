@@ -6,10 +6,16 @@ class shodanSearch:
     def shodanGath(self):
         path = os.path.abspath(os.path.dirname(sys.argv[0]))
         keyPath = path + "/api/api.txt"
-        api_shodan_key = open(keyPath, "r").read().strip()
-        if api_shodan_key == "":
+        api_shodan_key = os.environ.get('SHODAN_API_KEY', '').strip()
+        if not api_shodan_key:
+            try:
+                api_shodan_key = open(keyPath, "r").read().strip()
+            except FileNotFoundError:
+                api_shodan_key = ''
+        if not api_shodan_key:
             print('no shodan api found, please insert a valid one')
             api_shodan_key = input('\ntype here:').strip()
+            os.makedirs(os.path.dirname(keyPath), exist_ok=True)
             with open(keyPath, "w") as api:
                 api.write(api_shodan_key)
         api = shodan.Shodan(api_shodan_key)

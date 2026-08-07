@@ -10,15 +10,22 @@ class censysSearch:
     def censysGath(self):
         path = os.path.abspath(os.path.dirname(sys.argv[0]))
         keyPath = path + "/api/censys_api.txt"
-        censys_list = open(keyPath, "r").read().splitlines()
-        if len(censys_list) < 2:
+        uid = os.environ.get('CENSYS_API_ID', '').strip()
+        secret = os.environ.get('CENSYS_API_SECRET', '').strip()
+        if not uid or not secret:
+            try:
+                censys_list = open(keyPath, "r").read().splitlines()
+                if len(censys_list) >= 2:
+                    uid, secret = censys_list[0].strip(), censys_list[1].strip()
+            except FileNotFoundError:
+                pass
+        if not uid or not secret:
             print('no censys api found, please insert a valid one')
-            api_censys_uid = input('[****]' + 'type here uid:').strip()
-            api_censys_scrt = input('[****]' + 'type here secret:').strip()
+            uid = input('[****]type here uid:').strip()
+            secret = input('[****]type here secret:').strip()
+            os.makedirs(os.path.dirname(keyPath), exist_ok=True)
             with open(keyPath, "w") as api:
-                api.write(api_censys_uid + "\n" + api_censys_scrt)
-            return
-        uid, secret = censys_list[0], censys_list[1]
+                api.write(uid + "\n" + secret)
         query = None
         try:
             menuSelection = [['Cameras', 'List of cameras query and affiliated'],
