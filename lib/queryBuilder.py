@@ -93,7 +93,7 @@ class QueryBuilder:
         elif selection == 13:
             query = 'http.favicon.hash:145805043'
         elif selection == 14:
-            query = 'http.title:"SAMIP Web Access" http.favicon.hash:388917096'
+            query = 'http.title:"SAMIP Web Access"'
         elif selection == 15:
             query = str(input('[-]Enter your custom query: '))
         return query
