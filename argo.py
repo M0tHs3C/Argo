@@ -33,7 +33,7 @@ ARGO_GRADIENT = [Fore.CYAN, Fore.CYAN, Fore.BLUE, Fore.BLUE, Fore.MAGENTA, Fore.
 EYE_OUTLINE = [
     "          ",
     "   ___    ",
-    " <  {0}  > ",
+    " <  {0}  >  ",
     "   ‾‾‾    ",
     "          ",
     "          ",
