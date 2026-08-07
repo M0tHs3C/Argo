@@ -15,6 +15,7 @@ from modules.upTester import *
 from exploit.exploitMenu import *
 from modules.testerMenu import *
 from modules.fileDelete import *
+from modules.c2 import *
 from lib.menuBuilder import *
 
 
@@ -78,6 +79,8 @@ class Argo:
             elif selectionArg == 5:
                 exploitMenu.exploitMenu(self)
             elif selectionArg == 6:
+                c2.c2Menu(self)
+            elif selectionArg == 7:
                 fileDelete.deleteFileContent(self)
 
         banner = renderBanner()
@@ -86,6 +89,7 @@ class Argo:
                     ["Test for up host", "host may be down even if the search is fresh"],
                     ["Test for false positive", "not all host may be vuln"],
                     ["Exploit menu", "List of available exploit"],
+                    ["Host Control", "port scan & shell management"],
                     ["Delete Hosts lists", "Clear history of hosts"]]
         print(banner)
         selectionInput = menuBuilder.choose(selectionArray=argoMenu, title="Argo main menu")
