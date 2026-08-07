@@ -56,8 +56,9 @@ class QueryBuilder:
         query = QueryBuilder.countryAdder(query)
         query = QueryBuilder.cityAdder(query)
         return query
-    def CamQueryBuilderShodan(self):
-        selection = menuBuilder.readInt()
+    def CamQueryBuilderShodan(self, selection=None):
+        if selection is None:
+            selection = menuBuilder.readInt()
         query = None
         if selection == 1:
             query = 'http.favicon.hash:999357577'

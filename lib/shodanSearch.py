@@ -34,8 +34,10 @@ class shodanSearch:
                          ['icare', 'http.favicon.hash:1786862297'],
                          ['teleindustria', 'http.favicon.hash:145805043'],
                          ['Custom query', 'customize your search']]
-            menuBuilder.menuBuilder.buildMenu(selectionArray=selection,title="Shodan search")
-            query = queryBuilder.QueryBuilder.CamQueryBuilderShodan(self)
+            sel = menuBuilder.menuBuilder.choose(selectionArray=selection + [['Back', '']], title="Shodan search")
+            if sel == len(selection) + 1:
+                return
+            query = queryBuilder.QueryBuilder.CamQueryBuilderShodan(self, selection=sel)
             if not query:
                 return
             try:
