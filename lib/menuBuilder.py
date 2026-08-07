@@ -1,3 +1,4 @@
+import sys
 from colorama import init, Fore, Style
 
 init(autoreset=True)
@@ -99,6 +100,15 @@ class menuBuilder:
         if answer is None:
             raise RuntimeError("no answer")
         return answer
+
+    def shellBanner(target):
+        sys.stdout.write(f"\033]0;shell @ {target}\007")
+        sys.stdout.flush()
+        label = f"  shell @ {target}  "
+        width = max(len(label), 38)
+        print("\n" + menuBuilder.BORDER + "┌" + "─" * width + "┐")
+        print(menuBuilder.BORDER + "│" + Style.BRIGHT + Fore.WHITE + label.center(width) + Style.RESET_ALL + menuBuilder.BORDER + "│")
+        print(menuBuilder.BORDER + "└" + "─" * width + "┘" + Style.RESET_ALL + "\n")
 
     def choose(self=None, selectionArray=None, title=None, prompt="Choose an option"):
         try:
