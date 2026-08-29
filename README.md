@@ -81,7 +81,7 @@ Three categories of exploits, each with its own submenu:
 | RSP device | Device exploit |
 | Viola DVR | Default credential bruteforce |
 | Avtech DVR | Device exploit |
-| Bticino | Default credential bruteforce |
+| Bticino | Auth bypass (VLN-04 validatein) / Default credential bruteforce |
 | Geovision | Device exploit |
 | GoAhead | Credential extraction |
 | Atlantis | Credential bruteforce |

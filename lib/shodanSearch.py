@@ -23,7 +23,7 @@ class shodanSearch:
             selection = [['Hikvision', 'http.favicon.hash:999357577'],
                          ['RSP device', 'WIP'],
                          ['Viola DVR', 'WIP'],
-                         ['Bticino', 'My-Home Bticino'],
+                         ['Bticino', 'http.favicon.hash:965868968'],
                          ['GeoVision', 'Beta-testing'],
                          ['GoAhead', 'GoAhead cctv'],
                          ['Mixed webcam w/o password',''],
