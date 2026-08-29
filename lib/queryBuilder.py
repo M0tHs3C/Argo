@@ -67,7 +67,7 @@ class QueryBuilder:
         elif selection == 3:
             query = '/wap.htm'
         elif selection == 4:
-            query = 'http.favicon.hash:965868968 port:80,443'
+            query = 'http.favicon.hash:965868968'
         elif selection == 5:
             query = 'Server: thttpd PHP'
         elif selection == 6:
