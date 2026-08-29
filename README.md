@@ -81,7 +81,6 @@ Three categories of exploits, each with its own submenu:
 | RSP device | Device exploit |
 | Viola DVR | Default credential bruteforce |
 | Avtech DVR | Device exploit |
-| Bticino | Auth bypass (VLN-04 validatein) / Default credential bruteforce |
 | Geovision | Device exploit |
 | GoAhead | Credential extraction |
 | Atlantis | Credential bruteforce |
@@ -101,6 +100,7 @@ Three categories of exploits, each with its own submenu:
 | telephone           | SQLi auth bypass · Mass RCE · Interactive shell |
 | telephone2          | Default credential bruteforce · Mass RCE · Interactive shell |
 | Energy Sentinel Web | Default credentials |
+| Bticino             | Auth bypass (VLN-04 validatein) · Default credential bruteforce |
 
 ### 5 · Host Control
 Post-exploitation panel for hosts with confirmed access. Select a target from `vuln_host.txt` and run:
