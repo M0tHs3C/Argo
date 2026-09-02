@@ -1,7 +1,7 @@
 import os, sys
 import shodan
 from lib import queryBuilder
-from lib import menuBuilder
+from lib.menuBuilder import menuBuilder
 
 _BACK = '↩  Back'
 
